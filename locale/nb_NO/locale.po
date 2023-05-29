@@ -1,0 +1,113 @@
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2021-01-28 11:53+0000\n"
+"Last-Translator: FRITT, University of Oslo Library <fritt-"
+"info@journals.uio.no>\n"
+"Language-Team: Norwegian Bokmål <http://translate.pkp.sfu.ca/projects/"
+"plugins/pageone/nb_NO/>\n"
+"Language: nb_NO\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.9.1\n"
+
+msgid "plugins.themes.pageone.options.journalDescriptionColour.description"
+msgstr ""
+"Bakgrunnsfarge for tidsskriftsbeskrivelseseksjonen på tidsskriftets "
+"hjemmeside"
+
+msgid "plugins.themes.pageone.options.journalDescriptionColour.label"
+msgstr "Tidsskriftsbeskrivelse (bakgrunn)"
+
+msgid "plugins.themes.pageone.options.journalDescription.enable"
+msgstr "Aktiver"
+
+msgid "plugins.themes.pageone.options.journalDescription.disable"
+msgstr "Deaktiver (standard)"
+
+msgid "plugins.themes.pageone.options.journalDescription.description"
+msgstr ""
+"Hvis aktivert vil tidsskriftsbeskrivelsen bli vist på tidsskriftets "
+"landingsside"
+
+msgid "plugins.themes.pageone.options.journalDescription.label"
+msgstr "Vis tidsskriftsbeskrivelse"
+
+msgid "plugins.themes.pageone.options.sectionDescription.enable"
+msgstr "Aktiver; programtillegget Bla gjennom etter seksjon må være aktivert"
+
+msgid "plugins.themes.pageone.options.sectionDescription.disable"
+msgstr "Deaktiver"
+
+msgid "plugins.themes.pageone.options.sectionDescription.description"
+msgstr ""
+"Hvis aktivert vil seksjonsbeskrivelsen vises under hver seksjon på "
+"tidsskriftets hjemmeside"
+
+msgid "plugins.themes.pageone.options.sectionDescription.label"
+msgstr "Vis seksjonsbeskrivelse"
+
+msgid "plugins.themes.pageone.author.details"
+msgstr "Forfatteropplysninger"
+
+msgid "plugins.themes.pageone.authors.browse"
+msgstr "Bla gjennom etter forfatter"
+
+msgid "plugins.themes.pageone.article.figure"
+msgstr "Forsidebilde"
+
+msgid "plugins.themes.pageone.article.biography"
+msgstr "Biografi"
+
+msgid "plugins.themes.pageone.search.parameters"
+msgstr "Parametre"
+
+msgid "plugins.themes.pageone.issue.fullIssueLink"
+msgstr "Se hele nummeret"
+
+msgid "plugins.themes.pageone.about.journal"
+msgstr "Om tidsskriftet"
+
+msgid "plugins.themes.pageone.adminMenu"
+msgstr "Administrasjonsmeny"
+
+msgid "plugins.themes.pageone.language.toggle"
+msgstr "Endre språk. Valgt språk er:"
+
+msgid "plugins.themes.pageone.mainMenu"
+msgstr "Hovedmeny"
+
+msgid "plugins.themes.pageone.registration.consent"
+msgstr "Samtykke"
+
+msgid "plugins.themes.pageone.issue.description"
+msgstr "Nummerbeskrivelse"
+
+msgid "plugins.themes.pageone.issue.published"
+msgstr "Publisert"
+
+msgid "editor.issues.sectionArea"
+msgstr "Valg for numres seksjoner"
+
+msgid "plugins.themes.pageone.announcements.colorPick"
+msgstr "Oppslagsseksjones farge på tidsskriftets hjemmeside"
+
+msgid "plugins.themes.pageone.section.coverPage"
+msgstr "Seksjons forsidebilde"
+
+msgid "plugins.themes.pageone.colorPickInstructions"
+msgstr ""
+"Velg en farge for en seksjon som skal vises i tidsskriftets front-end. Må "
+"være en gyldig HTML  heksadesimal kode (f.eks #ffff00 for guI)."
+
+msgid "plugins.themes.pageone.colorPick"
+msgstr "Fargevelger"
+
+msgid "plugins.themes.pageone.description"
+msgstr ""
+"Et OJS theme med helsides bilder, store typer og fargerike blokker "
+"skreddersydd for tidsskrifter som har fokus på det visuelle."
+
+msgid "plugins.themes.pageone.name"
+msgstr "Pageone Theme"
