@@ -35,6 +35,30 @@
 	<a class="sr-only" href="#pageone_content_footer">{translate key="navigation.skip.footer"}</a>
 </div>
 
+
+			{* Primary navigation *}
+			{capture assign="primaryMenu"}
+				{load_menu name="primary" id="navigationPrimary" ulClass="pkp_navigation_primary"}
+			{/capture}
+
+			{if !empty(trim($primaryMenu)) || $currentContext}
+			<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+				<div class="container-fluid">
+				<a class="navbar-brand" href="#">
+					<img src="{$baseUrl}/templates/images/structure/logo.png" alt="Bootstrap" width="30" height="24">
+				</a>
+		  
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+		  
+				<div class="collapse navbar-collapse" id="main-menu">
+					{$primaryMenu}
+				</div>
+				</div>
+			</nav>
+			{/if}
+
 <header class="main-header"
         id="pageone_content_header"{if $pageoneHomepageImage} style="background-image: url('{$publicFilesDir}/{$pageoneHomepageImage.uploadName|escape:"url"}')"{/if}>
 	<div class="container-fluid">
@@ -87,25 +111,5 @@
 			</div>
 		{/if}
 
-			{* Primary navigation *}
-			{capture assign="primaryMenu"}
-				{load_menu name="primary" id="navigationPrimary" ulClass="pkp_navigation_primary"}
-			{/capture}
-
-			{if !empty(trim($primaryMenu)) || $currentContext}
-			<nav class="navbar navbar-expand-sm main-header__nav">
-				<button class="navbar-toggler mx-auto hamburger" data-target="#main-menu" data-toggle="collapse"
-				        type="button"
-				        aria-label="Menu" aria-controls="navigation">
-					<span class="hamburger__wrapper">
-		                <span class="hamburger__icon"></span>
-		            </span>
-				</button>
-				<h2 class="sr-only">{translate key="plugins.themes.pageone.mainMenu"}</h2>
-				<div class="collapse navbar-collapse" id="main-menu">
-					{$primaryMenu}
-				</div>
-			</nav>
-			{/if}
 	</div> {* container closing tag *}
 </header>
