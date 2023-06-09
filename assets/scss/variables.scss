@@ -1,0 +1,68 @@
+/**
+ * @file assets/scss/variables.less
+ *
+ * Converted to Sass
+ * Copyright (c) 2023-2023 Felipe Maia Barbosa
+ *
+ * Original Less code
+ * Copyright (c) 2014-2020 Simon Fraser University
+ * Copyright (c) 2003-2020 John Willinsky
+ * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+ *
+ * @brief less theme-wide variables
+ *
+ */
+
+$font-family-primary: 'Roboto', sans-serif;
+$font-family-secondary: 'Spectral', serif;
+
+
+// Color system
+
+// scss-docs-start gray-color-variables
+$white:    #fff !default;
+$gray-100: #e5e9e9 !default;
+$gray-200: #ccd3d3 !default;
+$gray-300: #b3bdbd !default;
+$gray-400: #99a8a7 !default;
+$gray-500: #809291 !default;
+$gray-600: #677c7b !default;
+$gray-700: #4d6765 !default;
+$gray-800: #1b3b38 !default;
+$gray-900: #022623 !default;
+$black:    #000 !default;
+
+// scss-docs-start color-variables
+$blue:    #235299 !default;
+$indigo:  #35278C !default;
+$purple:  #8D22BF !default;
+$pink:    #EA4D99 !default;
+$red:     #D92911 !default;
+$orange:  #FC8C05 !default;
+$yellow:  #F0C437 !default;
+$green:   #208C19 !default;
+$teal:    #1E9CA6 !default;
+$cyan:    #89D9D1 !default;
+$maroon:  #BF8665 !default;
+
+
+// scss-docs-start colors-map
+$colors: (
+  "blue":       $blue,
+  "indigo":     $indigo,
+  "purple":     $purple,
+  "pink":       $pink,
+  "red":        $red,
+  "orange":     $orange,
+  "yellow":     $yellow,
+  "green":      $green,
+  "teal":       $teal,
+  "cyan":       $cyan,
+  "white":      $white,
+  "gray":       $gray-600,
+  "gray-dark":  $gray-800,
+  "maroon":     $maroon
+) !default;
+
+$primary-color: $indigo;
+$secondary-color: $gray-900;

@@ -1,0 +1,44 @@
+/**
+* @file assets/scss/objects/article_summary.scss
+*
+* Converted to Sass
+* Copyright (c) 2023-2023 Felipe Maia Barbosa
+*
+* Original Less code
+* Copyright (c) 2014-2020 Simon Fraser University
+* Copyright (c) 2003-2020 John Willinsky
+* Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+*
+* @brief Stylesheet for article landing page
+*
+*/
+.article {
+	margin-bottom: 7.5vh;
+}
+
+.article a:after {
+	border: 0;
+}
+
+.article__title {
+	margin-top: 0.75rem;
+}
+
+.article__meta {
+	font-size: smaller;
+}
+
+.article__img {
+	margin: 0 0 2.5vh 0;
+	min-width: 100%;
+}
+
+.article__btn-group {
+	list-style: none;
+	padding: 0;
+	margin: 2.5vh 0 0 0;
+}
+
+.article__btn-group li {
+	display: inline-block;
+}

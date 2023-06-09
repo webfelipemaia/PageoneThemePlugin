@@ -14,7 +14,7 @@ var packageDist = 'dist';
 var separator = '/';
 var filesToMove = [
 	'./assets/**/*.*',
-	'./assets/less/**/*.*',
+	'./assets/scss/**/*.*',
 	'./locale/**/*.*',
 	'./templates/**/**/*.*',
 	'./gulpfile.js',
@@ -29,9 +29,19 @@ var filesToMove = [
 
 gulp.task('sass', function() {
 	return gulp
-		.src(['node_modules/bootstrap/scss/bootstrap.scss'])
+		.src(['assets/scss/vendor/bootstrap/scss/bootstrap.scss',])
 		.pipe(sass())
 		.pipe(concat('app.min.css'))
+		.pipe(minifyCSS())
+		.pipe(gulp.dest('assets/css'));
+});
+
+
+gulp.task('themeSass', function() {
+	return gulp
+		.src(['assets/scss/pageone.scss'])
+		.pipe(sass())
+		.pipe(concat('pageone.min.css'))
 		.pipe(minifyCSS())
 		.pipe(gulp.dest('assets/css'));
 });
@@ -39,8 +49,7 @@ gulp.task('sass', function() {
 gulp.task('scripts', function() {
 	return gulp
 		.src([
-			'node_modules/@popperjs/core/dist/umd/popper.js',
-			'node_modules/bootstrap/dist/js/bootstrap.js',
+			'assets/scss/vendor/bootstrap/dist/js/bootstrap.js',
 			'assets/js/main.js'
 		])
 		.pipe(sourcemaps.init())
@@ -63,7 +72,7 @@ gulp.task('compress', function() {
 		.pipe(gulp.dest('assets/js'));
 });
 
-gulp.task('compileAll', gulp.series('sass', 'scripts', 'compress'));
+gulp.task('compileAll', gulp.series('sass','themeSass', 'scripts', 'compress'));
 
 gulp.task('watch', function() {
 	return gulp.watch('assets/js/**/*.js', gulp.series('scripts', 'compress'));
