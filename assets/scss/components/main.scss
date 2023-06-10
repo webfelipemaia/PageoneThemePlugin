@@ -1,0 +1,23 @@
+
+/**
+* @file assets/scss/components/header.scss
+**
+* Converted to Sass
+* Copyright (c) 2023-2023 Felipe Maia Barbosa*
+* Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+*
+* @brief Stylesheet for all html
+*
+*/
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	white-space: nowrap;
+	border: 0;
+  }

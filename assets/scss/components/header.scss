@@ -158,6 +158,16 @@
 	color: $primary-color;
 }
 
+.navigation-sticky {
+    position:fixed;
+    top:0;
+	transition: 2s all ease;
+}
+
+nav#navigationStickyMenu {
+	transition: 2s all ease;
+}
+
 @media (min-width: 992px) {
 	// Dropdown menu for Primary Navigation
 	#navigationPrimary {

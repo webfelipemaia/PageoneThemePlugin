@@ -42,7 +42,7 @@
 			{/capture}
 
 			{if !empty(trim($primaryMenu)) || $currentContext}
-			<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+			<nav id="navigationStickyMenu" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
 				<div class="container-fluid">
 				<a class="navbar-brand" href="#">
 					<img src="{$baseUrl}/templates/images/structure/logo.png" alt="Bootstrap" width="30" height="24">

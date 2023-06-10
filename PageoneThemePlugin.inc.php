@@ -26,6 +26,7 @@ class PageoneThemePlugin extends ThemePlugin {
 		$this->addStyle('htmlGalley', 'templates/plugins/generic/htmlArticleGalley/css/default.css', array('contexts' => 'htmlGalley'));
 
 		// Adding JS scripts
+		$this->addScript('jquery', 'assets/js/jquery.min.js');
 		$this->addScript('app-js', 'assets/js/app.min.js');
 
 		// Add navigation menu areas for this theme

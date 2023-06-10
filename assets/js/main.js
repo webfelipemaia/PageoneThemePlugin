@@ -143,3 +143,19 @@ if ($contextOptinGroup.length) {
 		}
 	});
 }
+
+// Fix navigation on scroll
+
+	const navigationStickyMenu = document.querySelector('#navigationStickyMenu');
+    //const mainContent = document.getElementById('pageone_content_main');
+
+	function stickyNavigation() {
+
+		if (window.scrollY >= 150) {
+			navigationStickyMenu.classList.add('navigation-sticky');
+		} else {
+			navigationStickyMenu.classList.remove('navigation-sticky');
+		}
+	}
+
+	window.addEventListener('scroll', stickyNavigation);
