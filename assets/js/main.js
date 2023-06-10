@@ -150,6 +150,12 @@ if ($contextOptinGroup.length) {
     //const mainContent = document.getElementById('pageone_content_main');
 
 	function stickyNavigation() {
+		
+		if(window.scrollY >= 50) {
+			navigationStickyMenu.classList.add('navigation-before-sticky');
+		} else {
+			navigationStickyMenu.classList.remove('navigation-before-sticky');
+		}
 
 		if (window.scrollY >= 150) {
 			navigationStickyMenu.classList.add('navigation-sticky');

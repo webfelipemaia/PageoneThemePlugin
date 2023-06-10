@@ -54,6 +54,25 @@
 		  
 				<div class="collapse navbar-collapse" id="main-menu">
 					{$primaryMenu}
+
+				<nav class="main-header__admin{if $localeShow} locale-enabled{else} locale-disabled{/if}">
+
+					{* User navigation *}
+					{capture assign="userMenu"}
+						{load_menu name="user" id="navigationUser" ulClass="pkp_navigation_user"}
+					{/capture}
+		
+					{* language toggle block *}
+					{if $localeShow}
+						{include file="frontend/components/languageSwitcher.tpl" id="languageNav"}
+					{/if}
+		
+					{if !empty(trim($userMenu))}
+						<h2 class="sr-only">{translate key="plugins.themes.pageone.adminMenu"}</h2>
+						{$userMenu}
+					{/if}
+		
+				</nav>
 				</div>
 				</div>
 			</nav>
@@ -62,24 +81,7 @@
 <header class="main-header"
         id="pageone_content_header"{if $pageoneHomepageImage} style="background-image: url('{$publicFilesDir}/{$pageoneHomepageImage.uploadName|escape:"url"}')"{/if}>
 	<div class="container-fluid">
-		<nav class="main-header__admin{if $localeShow} locale-enabled{else} locale-disabled{/if}">
 
-			{* User navigation *}
-			{capture assign="userMenu"}
-				{load_menu name="user" id="navigationUser" ulClass="pkp_navigation_user"}
-			{/capture}
-
-			{* language toggle block *}
-			{if $localeShow}
-				{include file="frontend/components/languageSwitcher.tpl" id="languageNav"}
-			{/if}
-
-			{if !empty(trim($userMenu))}
-				<h2 class="sr-only">{translate key="plugins.themes.pageone.adminMenu"}</h2>
-				{$userMenu}
-			{/if}
-
-		</nav>
 
 		{if $requestedOp == 'index'}
 			<h1 class="main-header__title">

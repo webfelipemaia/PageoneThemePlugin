@@ -15,6 +15,10 @@
 
 // Header and general rules for navigation menus
 
+#main-menu {
+	justify-content: space-between;
+}
+
 .main-header {
 	background-color: $primary-color;
 	position: relative;
@@ -98,7 +102,7 @@
 	font-size: smaller;
 
 	&.locale-enabled {
-		justify-content: space-between;
+		justify-content: flex-end;
 	}
 
 	&.locale-disabled {
@@ -119,6 +123,10 @@
 	}
 }
 
+#navigationUser {
+	display: flex;
+}
+
 #languageNav {
 	border-bottom: none;
 
@@ -130,6 +138,13 @@
 			color: $primary-color;
 		}
 	}
+}
+
+
+#languageNav,
+#navigationUser {
+	align-items: center;
+	justify-content: end;
 }
 
 // Primary Navigation
@@ -158,10 +173,19 @@
 	color: $primary-color;
 }
 
+.navigation-before-sticky {
+	position: relative;
+	transform: translateY(-150px);
+	opacity: 0;
+	transition: 0.5s all ease-out;
+}
+
 .navigation-sticky {
     position:fixed;
     top:0;
-	transition: 2s all ease;
+	transform: translateY(0);
+	opacity: 1;
+	transition: 0.5s all ease-in;
 }
 
 nav#navigationStickyMenu {
@@ -174,7 +198,7 @@ nav#navigationStickyMenu {
 		& .dropdown-menu.show {
 			display: flex;
 			flex-wrap: wrap;
-			justify-content: space-around;
+			justify-content: start;
 			align-content: center;
 			position: absolute;
 			top: 100%;
