@@ -6,10 +6,10 @@
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @brief Site-wide header; includes journal logo, user menu, and primary menu
- * @uses $languageToggleLocales array All supported locales (from the Pageone theme)
+ * @uses $languageToggleLocales array All supported locales (from the Immersion theme)
  *}
 
-{strip}
+ {strip}
 	{* Determine whether a logo or title string is being displayed *}
 	{assign var="showingLogo" value=true}
 	{if !$displayPageHeaderLogo}
@@ -26,62 +26,36 @@
 <html lang="{$currentLocale|replace:"_":"-"}" xml:lang="{$currentLocale|replace:"_":"-"}">
 {if !$pageTitleTranslated}{capture assign="pageTitleTranslated"}{translate key=$pageTitle}{/capture}{/if}
 {include file="frontend/components/headerHead.tpl"}
-<body class="page_{$requestedPage|escape|default:"index"} op_{$requestedOp|escape|default:"index"}{if $showingLogo} has_site_logo{/if}{if $pageoneIndexType} {$pageoneIndexType|escape}{/if}"
+<body class="page_{$requestedPage|escape|default:"index"} op_{$requestedOp|escape|default:"index"}{if $showingLogo} has_site_logo{/if}{if $immersionIndexType} {$immersionIndexType|escape}{/if}"
       dir="{$currentLocaleLangDir|escape|default:"ltr"}">
 
 <div class="cmp_skip_to_content">
-	<a class="sr-only" href="#pageone_content_header">{translate key="navigation.skip.nav"}</a>
-	<a class="sr-only" href="#pageone_content_main">{translate key="navigation.skip.main"}</a>
-	<a class="sr-only" href="#pageone_content_footer">{translate key="navigation.skip.footer"}</a>
+	<a class="visually-hidden" href="#immersion_content_header">{translate key="navigation.skip.nav"}</a>
+	<a class="visually-hidden" href="#immersion_content_main">{translate key="navigation.skip.main"}</a>
+	<a class="visually-hidden" href="#immersion_content_footer">{translate key="navigation.skip.footer"}</a>
 </div>
 
+<header class="main-header"
+        id="immersion_content_header"{if $immersionHomepageImage} style="background-image: url('{$publicFilesDir}/{$immersionHomepageImage.uploadName|escape:"url"}')"{/if}>
+	<div class="container-fluid">
+		<nav class="main-header__admin{if $localeShow} locale-enabled{else} locale-disabled{/if}">
 
-			{* Primary navigation *}
-			{capture assign="primaryMenu"}
-				{load_menu name="primary" id="navigationPrimary" ulClass="pkp_navigation_primary"}
+			{* User navigation *}
+			{capture assign="userMenu"}
+				{load_menu name="user" id="navigationUser" ulClass="pkp_navigation_user"}
 			{/capture}
 
-			{if !empty(trim($primaryMenu)) || $currentContext}
-			<nav id="navigationStickyMenu" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-				<div class="container-fluid">
-				<a class="navbar-brand" href="#">
-					<img src="{$baseUrl}/templates/images/structure/logo.png" alt="Bootstrap" width="30" height="24">
-				</a>
-		  
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-		  
-				<div class="collapse navbar-collapse" id="main-menu">
-					{$primaryMenu}
-
-				<nav class="main-header__admin{if $localeShow} locale-enabled{else} locale-disabled{/if}">
-
-					{* User navigation *}
-					{capture assign="userMenu"}
-						{load_menu name="user" id="navigationUser" ulClass="pkp_navigation_user"}
-					{/capture}
-		
-					{* language toggle block *}
-					{if $localeShow}
-						{include file="frontend/components/languageSwitcher.tpl" id="languageNav"}
-					{/if}
-		
-					{if !empty(trim($userMenu))}
-						<h2 class="sr-only">{translate key="plugins.themes.pageone.adminMenu"}</h2>
-						{$userMenu}
-					{/if}
-		
-				</nav>
-				</div>
-				</div>
-			</nav>
+			{* language toggle block *}
+			{if $localeShow}
+				{include file="frontend/components/languageSwitcher.tpl" id="languageNav"}
 			{/if}
 
-<header class="main-header"
-        id="pageone_content_header"{if $pageoneHomepageImage} style="background-image: url('{$publicFilesDir}/{$pageoneHomepageImage.uploadName|escape:"url"}')"{/if}>
-	<div class="container-fluid">
+			{if !empty(trim($userMenu))}
+				<h2 class="visually-hidden">{translate key="plugins.themes.immersion.adminMenu"}</h2>
+				{$userMenu}
+			{/if}
 
+		</nav>
 
 		{if $requestedOp == 'index'}
 			<h1 class="main-header__title">
@@ -113,5 +87,25 @@
 			</div>
 		{/if}
 
+			{* Primary navigation *}
+			{capture assign="primaryMenu"}
+				{load_menu name="primary" id="navigationPrimary" ulClass="pkp_navigation_primary"}
+			{/capture}
+
+			{if !empty(trim($primaryMenu)) || $currentContext}
+			<nav class="navbar navbar-expand-sm main-header__nav">
+				<button class="navbar-toggler mx-auto hamburger" data-bs-target="#main-menu" data-bs-toggle="collapse"
+				        type="button"
+				        aria-label="Menu" aria-controls="navigation">
+					<span class="hamburger__wrapper">
+		                <span class="hamburger__icon"></span>
+		            </span>
+				</button>
+				<h2 class="visually-hidden">{translate key="plugins.themes.immersion.mainMenu"}</h2>
+				<div class="collapse navbar-collapse" id="main-menu">
+					{$primaryMenu}
+				</div>
+			</nav>
+			{/if}
 	</div> {* container closing tag *}
 </header>

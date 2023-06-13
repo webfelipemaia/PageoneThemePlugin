@@ -19,14 +19,14 @@ class PageoneThemePlugin extends ThemePlugin {
 	public function init() {
 
 		// Adding styles
-		$this->addStyle('app-css', 'assets/css/app.min.css');
+		//$this->addStyle('app-css', 'assets/css/app.min.css');
 		$this->addStyle('pageone-css', 'assets/css/pageone.min.css');
 
 		// Styles for HTML galleys
 		$this->addStyle('htmlGalley', 'templates/plugins/generic/htmlArticleGalley/css/default.css', array('contexts' => 'htmlGalley'));
 
 		// Adding JS scripts
-		$this->addScript('jquery', 'assets/js/jquery.min.js');
+		//$this->addScript('jquery', 'assets/js/jquery.min.js');
 		$this->addScript('app-js', 'assets/js/app.min.js');
 
 		// Add navigation menu areas for this theme

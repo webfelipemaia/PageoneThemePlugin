@@ -49,6 +49,7 @@ gulp.task('themeSass', function() {
 gulp.task('scripts', function() {
 	return gulp
 		.src([
+			'node_modules/@popperjs/core/dist/umd/popper.js',
 			'assets/scss/vendor/bootstrap/dist/js/bootstrap.js',
 			'assets/js/main.js'
 		])
@@ -58,10 +59,10 @@ gulp.task('scripts', function() {
 		.pipe(gulp.dest('assets/js'));
 });
 
-gulp.task('jquery-scripts', function() {
-	return gulp.src('./node_modules/jquery/dist/jquery.min.js')
-	  .pipe(gulp.dest('assets/js'));
-  });
+//gulp.task('jquery-scripts', function() {
+//	return gulp.src('./node_modules/jquery/dist/jquery.min.js')
+//	  .pipe(gulp.dest('assets/js'));
+//  });
 
 gulp.task('compress', function() {
 	return gulp
@@ -77,7 +78,7 @@ gulp.task('compress', function() {
 		.pipe(gulp.dest('assets/js'));
 });
 
-gulp.task('compileAll', gulp.series('sass','themeSass', 'scripts','jquery-scripts', 'compress'));
+gulp.task('compileAll', gulp.series('sass','themeSass', 'scripts', 'compress'));
 
 gulp.task('watch', function() {
 	return gulp.watch('assets/js/**/*.js', gulp.series('scripts', 'compress'));
