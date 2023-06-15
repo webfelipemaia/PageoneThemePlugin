@@ -51,7 +51,19 @@
 			{if !empty(trim($primaryMenu)) || $currentContext}
 
 				<nav class="navbar navbar-expand-sm main-header__nav">
-					<a class="navbar-brand" href="#">Navbar</a>
+					{if $displayPageHeaderLogo}
+						<a href="{$homeUrl}" class="navbar-brand">
+							<img src="{$publicFilesDir}/{$displayPageHeaderLogo.uploadName|escape:"url"}" height="36" {if $displayPageHeaderLogo.altText != ''}alt="{$displayPageHeaderLogo.altText|escape}"{else}alt="{translate key="common.pageHeaderLogo.altText"}"{/if} />
+						</a>
+					{elseif $displayPageHeaderTitle}
+						<a href="{$homeUrl}" class="navbar-brand">
+							<span>{$displayPageHeaderTitle|escape}</span>
+						</a>
+					{else}
+						<a href="/" class="navbar-brand">
+							<span>Início</span>
+						</a>
+					{/if}
 					<button class="navbar-toggler mx-auto hamburger" data-bs-target="#main-menu" data-bs-toggle="collapse"
 							type="button"
 							aria-label="Menu" aria-controls="navigation">
@@ -103,7 +115,7 @@
 		{/capture}
 
 		{if $displayPageHeaderLogo}
-			<a href="{$homeUrl}" class="is_img">
+			<a href="{$homeUrl}" class="navbar-brand">
 				<img src="{$publicFilesDir}/{$displayPageHeaderLogo.uploadName|escape:"url"}" width="{$displayPageHeaderLogo.width|escape}" height="{$displayPageHeaderLogo.height|escape}" {if $displayPageHeaderLogo.altText != ''}alt="{$displayPageHeaderLogo.altText|escape}"{else}alt="{translate key="common.pageHeaderLogo.altText"}"{/if} />
 			</a>
 		{elseif $displayPageHeaderTitle}

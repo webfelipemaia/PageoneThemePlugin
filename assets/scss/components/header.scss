@@ -181,6 +181,13 @@
 
 #navigationStickyMenu {
 	background-color: $primary-color;
+
+
+	.navbar-brand {
+		img {
+			filter: invert(100%);
+		}
+	}
 }
 
 .navigation-before-sticky {
@@ -216,6 +223,13 @@
 	
 		&:hover, &:focus, &:active {
 			color: $primary-color;
+		}
+	}
+
+
+	.navbar-brand {
+		img {
+			filter: none;
 		}
 	}
 	
