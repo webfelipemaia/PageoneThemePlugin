@@ -17,7 +17,7 @@
 
 body {
 	font-family: $font-family-primary;
-	color: #000;
+	color: $secondary-color;
 	font-size: 18px;
 	font-weight: 400;
 	-webkit-font-smoothing: antialiased;
@@ -53,7 +53,7 @@ li {
 }
 
 blockquote {
-	border-left: 1px solid #000;
+	border-left: 1px solid $secondary-color;
 	padding-left: 30px;
 }
 
@@ -77,17 +77,18 @@ dd {
 }
 
 code {
-	color: #000;
+	color: $secondary-color;
 	font-size: smaller;
 }
 
 a {
-	color: #000;
+	color: $secondary-color;
 	display: inline-block;
+	text-decoration: none;
 }
 
 a:hover {
-	color: #000;
+	color: $primary-color;
 	text-decoration: none;
 }
 
@@ -117,7 +118,8 @@ aside a:after {
 	-webkit-transition: all 0.4s ease-in;
 	-o-transition: all 0.4s ease-in;
 	transition: all 0.4s ease-in;
-	border-bottom: 1px solid #000;
+	border-bottom: 2px solid $primary-color;
+	text-decoration: none;
 }
 
 main a:hover:after,

@@ -20,7 +20,7 @@
 }
 
 .main-header {
-	background-color: $primary-color;
+	background-color: transparent;
 	position: relative;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -28,6 +28,7 @@
 	font-family: $font-family-primary;
 	font-weight: 300;
 	height: 100%;
+	
 
 	& ul {
 		list-style: none;

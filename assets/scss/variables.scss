@@ -66,3 +66,4 @@ $colors: (
 
 $primary-color: $indigo;
 $secondary-color: $gray-900;
+$btn-background-color: shade-color($primary-color,20%);
