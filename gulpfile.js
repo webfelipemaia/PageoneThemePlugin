@@ -81,7 +81,7 @@ gulp.task('compress', function() {
 gulp.task('compileAll', gulp.series('sass','themeSass', 'scripts', 'compress'));
 
 gulp.task('watch', function() {
-	return gulp.watch('assets/js/**/*.js', gulp.series('scripts', 'compress'));
+	return gulp.watch('assets/js/**/*.js', gulp.series('sass', 'scripts', 'compress'));
 });
 
 gulp.task('cleandist', function() {

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @file plugins/themes/immersion/PageoneThemePlugin.inc.php
+ * @file plugins/themes/pageone/PageoneThemePlugin.inc.php
  *
  * Copyright (c) 2014-2020 Simon Fraser University
  * Copyright (c) 2003-2020 John Willinsky

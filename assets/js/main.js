@@ -160,6 +160,7 @@
 		}
 
 		if (window.scrollY >= 150) {
+			navigationStickyMenu.classList.remove('navigation-before-sticky');
 			navigationStickyMenu.classList.add('navigation-sticky');
 		} else {
 			navigationStickyMenu.classList.remove('navigation-sticky');

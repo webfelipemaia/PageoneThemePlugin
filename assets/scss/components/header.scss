@@ -110,16 +110,18 @@
 	}
 }
 
-.main-header__admin-link, .main-header__lang-link {
+.navbar-brand,
+.main-header__admin-link, 
+.main-header__lang-link {
 	padding: 0.25em 0.5em;
 	margin-left: 0.5em;
-	background-color: $primary-color;
-	color: $secondary-color;
+	background-color: transparent;
+	color: $gray-200;
 	cursor: pointer;
+	text-decoration: none;
 
 	&:hover, &:focus, &:active {
-		color: $primary-color;
-		background-color: $secondary-color;
+		color: $white;
 	}
 }
 
@@ -130,8 +132,8 @@
 #languageNav {
 	border-bottom: none;
 
-	// overwriting bootstrap
-	.main-header__lang-link {
+	.main-header__admin-link,
+	.main-header__nav-link {
 		color: $secondary-color;
 
 		&:hover, &:focus, &:active {
@@ -148,17 +150,20 @@
 }
 
 // Primary Navigation
-
-.main-header__nav-link {
+.navbar-brand,
+.main-header__nav-link,
+.main-header__lang-link {
 	padding: 0.25em 0.5em;
-	background-color: #fff;
+	background-color: transparent;
 	margin: 0 2vw;
+	color: $gray-200;
+	text-decoration: none;
 
 	&:hover, &:focus, &:active {
-		color: $secondary-color;
-		background-color: $primary-color;
+		color: $white;
 	}
 }
+
 
 .navbar-nav {
 	flex-wrap: wrap;
@@ -173,6 +178,10 @@
 	color: $primary-color;
 }
 
+#navigationStickyMenu {
+	background-color: $primary-color;
+}
+
 .navigation-before-sticky {
 	position: relative;
 	transform: translateY(-150px);
@@ -181,11 +190,34 @@
 }
 
 .navigation-sticky {
-    position:fixed;
+    position: -webkit-sticky;
+	position: sticky;
     top:0;
 	transform: translateY(0);
 	opacity: 1;
+	transition: height .3s ease-out, background .3s ease-out, box-shadow .3s ease-out;
 	transition: 0.5s all ease-in;
+}
+
+// Modify the links, If the navigation is sticky at the top
+#navigationStickyMenu.navigation-sticky {
+	background-color: $white;
+	color: $primary-color;
+	box-shadow: 0 0 60px 0 rgba(0, 0, 0, .07);
+	border-bottom: 1px solid rgba(240, 240, 240, .8);
+
+	.navbar-brand,
+	.main-header__admin-link, 
+	.main-header__lang-link, 
+	.main-header__nav-link {
+		color: $gray-800;
+		text-decoration: none;
+	
+		&:hover, &:focus, &:active {
+			color: $primary-color;
+		}
+	}
+	
 }
 
 nav#navigationStickyMenu {
@@ -193,52 +225,26 @@ nav#navigationStickyMenu {
 }
 
 @media (min-width: 992px) {
-	// Dropdown menu for Primary Navigation
+
+	// Dropdown menu
 	#navigationPrimary {
 		& .dropdown-menu.show {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: start;
-			align-content: center;
-			position: absolute;
-			top: 100%;
-			left: 0;
-			padding: 1rem;
-			background-color: $secondary-color;
-			border-radius: 0;
-			width: 100%;
-			padding-top: 16px;
-			padding-bottom: 14px;
-		}
 
-		& .nav-item {
-			position: static;
-		}
+			& .dropdown-item {
 
-/*		& .nav-link {
+				& .nav-link {
+					color: $gray-800;
 
-			&:focus, &:hover {
-
-			}
-		}*/
-
-		& .dropdown-item {
-			width: initial;
-			padding: 0;
-			margin-bottom: 0;
-
-			& a {
-				margin-left: 0;
-				padding: 10px 8px 8px 8px;
-				border: 1px solid $secondary-color;
-
-				&:focus, &:hover {
-					background-color: $secondary-color;
-					border: 1px solid $primary-color;
+					
+					&:focus, &:hover {
+						color: $primary-color;
+					}
 				}
 			}
 		}
+
 	}
+
 }
 
 /* Custom hamburger menu */

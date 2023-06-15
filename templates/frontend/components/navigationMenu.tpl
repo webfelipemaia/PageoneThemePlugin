@@ -15,6 +15,7 @@
 
  {if $navigationMenu}
  <ul id="{$id|escape}" class="{$ulClass|escape} pkp_nav_list{if $id==="navigationPrimary"} navbar-nav mx-auto{/if}">
+	
 	 {foreach key=field item=navigationMenuItemAssignment from=$navigationMenu->menuTree}
 		 {if !$navigationMenuItemAssignment->navigationMenuItem->getIsDisplayed()}
 			 {continue}
