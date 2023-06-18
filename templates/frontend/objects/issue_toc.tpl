@@ -102,9 +102,7 @@
 
 {foreach from=$publishedSubmissions item=section}
 	{if $section.articles}
-		{assign var='pageoneColorPick' value=$section.sectionColor|escape}
-		{assign var='isSectionDark' value=$section.isSectionDark}
-		<section class="issue-section{if $isSectionDark} section_dark{/if}"{if $pageoneColorPick} style="background-color: {$pageoneColorPick};"{/if}>
+		<section class="issue-section">
 			<div class="container">
 				{if $section.title || $section.sectionDescription}
 					<header class="row issue-section__header">

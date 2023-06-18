@@ -17,7 +17,7 @@
 
 body {
 	font-family: $font-family-primary;
-	color: $secondary-color;
+	color: $gray-800;
 	font-size: 18px;
 	font-weight: 400;
 	-webkit-font-smoothing: antialiased;
@@ -53,7 +53,7 @@ li {
 }
 
 blockquote {
-	border-left: 1px solid $secondary-color;
+	border-left: 1px solid $gray-800;
 	padding-left: 30px;
 }
 
@@ -77,12 +77,12 @@ dd {
 }
 
 code {
-	color: $secondary-color;
+	color: $gray-800;
 	font-size: smaller;
 }
 
 a {
-	color: $secondary-color;
+	color: $gray-800;
 	display: inline-block;
 	text-decoration: none;
 }
@@ -109,6 +109,7 @@ aside li {
 	font-size: 0.75em;
 }
 
+.underlineit:after,
 main a:after,
 aside a:after {
 	display: block;
@@ -122,6 +123,7 @@ aside a:after {
 	text-decoration: none;
 }
 
+a:hover.underlineit:after,
 main a:hover:after,
 aside a:hover:after {
 	width: 0%;

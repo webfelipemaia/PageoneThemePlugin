@@ -15,8 +15,8 @@
 /* BEM components: issue */
 .issue {
 	padding-top: 7.5vh;
-	background: #000;
-	color: #fff;
+	background: $white;
+	color: $gray-800;
 
 	& .container {
 		min-height: 20vh;
@@ -45,7 +45,7 @@
 .issue__title {
 	span {
 		display: block;
-		font-weight: 400;
+		font-weight: 700;
 	}
 
 	.issue__volume, .issue__number {
@@ -59,12 +59,12 @@
 
 
 .issue__title span:last-of-type {
-	display: block;
-	font-weight: 700;
+	display: initial;
+	font-weight: 400;
 }
 
 .issue__title span:last-of-type:before {
-	content: '— ';
+	content: '';
 }
 
 /* BEM components: issue description */
@@ -131,6 +131,7 @@
 .issue-section__title {
 	font-family: $font-family-primary;
 	font-weight: 700;
+	color: $gray-800;
 }
 
 /*.issue-section__desc {
@@ -153,7 +154,7 @@
 
 // Section colors
 .issue-section {
-	background-color: $secondary-color;
+	background-color: tint-color($gray-100,10%);
 
 	h2, h3, h4, h5, h6 {
 		margin-top: 0;

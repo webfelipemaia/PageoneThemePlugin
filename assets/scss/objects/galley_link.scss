@@ -17,13 +17,13 @@
 	padding: 0.75em 1em;
 	box-shadow: none;
 	border-bottom: 0;
-	border: 1px solid #000;
-	color: #000;
+	border: 1px solid shade-color($primary-color, $btn-hover-bg-shade-amount);
+	color: shade-color($primary-color, $btn-hover-bg-shade-amount);
 }
 
 .article__btn:hover,
 .article__btn:focus,
 .article__btn:active {
-	background-color: #000;
+	background-color: $primary-color;
 	color: #fff;
 }
