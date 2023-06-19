@@ -93,6 +93,9 @@ class PageoneThemePlugin extends ThemePlugin {
 		HookRegistry::register('issueform::readuservars', array($this, 'readIssueFormFields'));
 		HookRegistry::register('issueform::execute', array($this, 'executeIssueFormFields'));
 
+		// Setting Announcement types
+		HookRegistry::register ('TemplateManager::display', array($this, 'announcementTypes'));
+
 		// Load colorpicker on issue management page
 		$this->addStyle('spectrum', '/assets/css/spectrum-1.8.0.css', [
 			'contexts' => 'backend-manageIssues',
@@ -459,6 +462,37 @@ class PageoneThemePlugin extends ThemePlugin {
 		$templateMgr->assign(array(
 			'boolEmbeddedCss' => $boolEmbeddedCss,
 			'themePath' => $request->getBaseUrl() . "/" . $this->getPluginPath(),
+		));
+	}
+
+	/**
+	 * @param $hookname string
+	 * @param $args array [
+	 *      @option TemplateManager
+	 *      @option string relative path to the template
+	 * ]
+	 * @return boolean|void
+	 * @brief define the announcement types. This should be mirrored with the announcement type setting.
+	 */
+	public function announcementTypes($hookname, $args) {
+
+		$templateMgr = $args[0];
+		$template = $args[1];
+
+		if ($template !== 'frontend/pages/indexJournal.tpl') return false;
+
+		// The section containing the announcement title is displayed
+		$isAnnouncementTitleDisplayed = false;
+
+		// Defines the announcement type as array
+		$announcementTypes = [
+			1 => array('label' => 'news','value' => __('News')),
+			2 => array('label' => 'events','value' => __('Events')),
+		];
+		
+		$templateMgr->assign(array(
+			'announcementTypes' => $announcementTypes,
+			'isAnnouncementTitleDisplayed' => $isAnnouncementTitleDisplayed,
 		));
 	}
 }

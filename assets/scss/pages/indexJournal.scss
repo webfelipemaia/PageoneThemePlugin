@@ -67,3 +67,26 @@
 	font-size: smaller;
 	margin-bottom: 10px;
 }
+
+.announcement__content {
+
+	.announcement__date {
+		.announcement__category {
+			&::after{
+				content: ' - '
+			}
+		}
+	}
+	.announcement__title {	
+
+		a {
+			color: $gray-800;
+		}
+
+	}
+
+	p {
+		color: $gray-700
+	}
+
+}

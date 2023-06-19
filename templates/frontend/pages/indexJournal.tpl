@@ -17,7 +17,6 @@
  * @uses $issue Issue Current issue
  * @uses $issueIdentificationString string issue identification that relies on user's settings
  * @uses $lastSectionColor string background color of the last section presented on the index page
- * @uses $pageoneAnnouncementsColor string background color of the announcements section
  *}
 
 {include file="frontend/components/header.tpl" pageTitleTranslated=$currentJournal->getLocalizedName()}
@@ -27,7 +26,7 @@
 	{call_hook name="Templates::Index::journal"}
 
 	{if $showJournalDescription && $currentJournal->getLocalizedDescription()}
-		<section class="journal-description{if $isJournalDescriptionDark} section_dark{/if}"{if $journalDescriptionColour} style="background-color: {$journalDescriptionColour|escape};"{/if}>
+		<section class="journal-description">
 			<div class="container">
 				<header class="row">
 					<h3 class="col-md-6">
@@ -49,27 +48,59 @@
 
 	{* Announcements *}
 	{if $numAnnouncementsHomepage && $announcements|@count}
-		<section class="announcements{if $isAnnouncementDark} section_dark{/if}"{if $pageoneAnnouncementsColor} style="background-color: {$pageoneAnnouncementsColor|escape};"{/if}>
+
+		<section class="announcements">
 			<div class="container">
+			
+			{if $isAnnouncementTitleDisplayed}
 				<header class="row">
 					<h3 class="col-md-6">
 						{translate key="announcement.announcements"}
 					</h3>
 				</header>
+			{/if}
+				{if $announcementTypes|@count }
+					{foreach from=$announcementTypes key=key item=category}
+						
+						<h3 class="col-md-6">
+							{if $announcementTypes[$key]}
+								{translate key="plugins.themes.pageone.announcement.type.{$announcementTypes[$key]['label']}"}
+							{/if}
+						</h3>
+						
+						<ul class="row announcement-section__toc">
+							{foreach from=$announcements item=announcement}
 
-				<ul class="row announcement-section__toc">
-					{foreach from=$announcements item=announcement}
-						<li class="col-md-4">
-							<p class="announcement__date">{$announcement->getDatePosted()|date_format:$dateFormatShort|escape}</p>
-							<h4 class="announcement__title">
-								<a href="{url router=$smarty.const.ROUTE_PAGE page="announcement" op="view" path=$announcement->getId()|escape}">
-									{$announcement->getLocalizedTitle()|escape}
-								</a>
-							</h4>
-							<p>{$announcement->getLocalizedDescriptionShort()|strip_unsafe_html}</p>
-						</li>
+								{if $announcement->getTypeId() == $key}
+
+								<li class="col-md-4 announcement__content">
+									<p class="announcement__date">
+									
+										{translate key="plugins.themes.pageone.announcement.type.published"} {$announcement->getDatePosted()|date_format:$dateFormatShort|escape}
+									
+									</p>
+
+									<h4 class="announcement__title">
+										<a href="{url router=$smarty.const.ROUTE_PAGE page="announcement" op="view" path=$announcement->getId()|escape}">
+											{$announcement->getLocalizedTitle()|escape}
+										</a>
+									</h4>
+									<p>{$announcement->getLocalizedDescriptionShort()|strip_unsafe_html}</p>
+
+									<a href="{url router=$smarty.const.ROUTE_PAGE page="announcement" op="view" path=$announcement->getId()}" class="btn btn-secondary">
+										<span aria-hidden="true" role="presentation">
+											{translate key="common.readMore"}
+										</span>
+										<span class="sr-only">
+											{translate key="common.readMoreWithTitle" title=$announcement->getLocalizedTitle()|escape}
+										</span>
+									</a>
+								{/if}
+								</li>
+							{/foreach}
+						</ul>
 					{/foreach}
-				</ul>
+				{/if}
 			</div>
 		</section>
 	{/if}

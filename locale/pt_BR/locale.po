@@ -105,3 +105,15 @@ msgstr "Plano de fundo da descrição da revista"
 
 msgid "plugins.themes.pageone.options.journalDescriptionColour.description"
 msgstr "Cor do plano de fundo da descrição da revista na home da revista"
+
+msgid "plugins.themes.pageone.announcement.type.news"
+msgstr "Notícias"
+
+msgid "plugins.themes.pageone.announcement.type.events"
+msgstr "Eventos"
+
+msgid "plugins.themes.pageone.announcement.type.category"
+msgstr "Na categoria"
+
+msgid "plugins.themes.pageone.announcement.type.published"
+msgstr "Publicado em"
