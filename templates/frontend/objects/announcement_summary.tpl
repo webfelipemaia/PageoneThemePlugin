@@ -14,7 +14,7 @@
 	{assign var="heading" value="h2"}
 {/if}
 
-<article>
+<article class="main__content-article">
 	<{$heading}>
 		<a href="{url router=$smarty.const.ROUTE_PAGE page="announcement" op="view" path=$announcement->getId()}">
 			{$announcement->getLocalizedTitle()|escape}

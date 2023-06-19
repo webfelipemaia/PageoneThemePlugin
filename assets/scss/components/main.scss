@@ -28,10 +28,33 @@ body {
 
 .main__content {
 	& a {
-		color: $secondary-color;
+		color: $gray-800;
 
 		&:hover {
 			color: $primary-color;
 		}
+	}
+
+	article {
+
+		&.main__content-article {
+
+			a:not(.btn) {
+		
+				color: $gray-800;
+				
+				&:hover {
+					color: $primary-color;
+					border-bottom: 1px solid $primary-color;
+				}
+				
+				&:after {
+					border-bottom: none;
+					transition: none;
+				}
+			}
+
+		}
+
 	}
 }
